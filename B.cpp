@@ -29,6 +29,26 @@ int main()
     cin >> T;
     while (T--)
     {
+        int n, m, k, i, j;
+        vector<int> ans;
+        cin >> n >> m;
+        if (n > m)
+            swap(n, m);
+        k = m / n * n;
+        for (i = 0; i < k; i++)
+            ans.push_back(n);
+        k = m % n;
+        while (m % n != 0)
+        {
+            m = n, n = k;
+            k = m / n * n;
+            for (i = 0; i < k; i++)
+                ans.push_back(n);
+            k = m % n;
         }
+        cout << ans.size() << "\n";
+        for (i = 0; i < ans.size(); i++)
+            cout << ans[i] << (i == ans.size() - 1 ? "\n" : " ");
+    }
     return 0;
 }

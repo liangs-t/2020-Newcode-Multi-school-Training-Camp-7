@@ -29,6 +29,9 @@ int main()
     cin >> T;
     while (T--)
     {
-        }
+        ll n;
+        cin >> n;
+        cout << ((n == 1 || n == 24) ? ("Fake news!") : ("Nobody knows it better than me!")) << "\n";
+    }
     return 0;
 }
